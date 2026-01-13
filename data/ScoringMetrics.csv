@@ -1,0 +1,12 @@
+metric_id,dimension,metric_name,metric_definition,scale_min,scale_max,direction,weight,notes
+M01,Readiness,Data availability,Required inputs exist and are accessible in structured format,1,5,HigherBetter,0.25,Score 5 if all data fields populated consistently
+M02,Readiness,Data quality,Data is clean consistent and reliable with minimal missing values,1,5,HigherBetter,0.25,Score 5 if less than 5% missing data
+M03,Readiness,Process standardization,Process follows documented steps with clear handoffs,1,5,HigherBetter,0.25,Score 5 if fully documented SOPs exist
+M04,Readiness,Tool integration readiness,Required systems can be integrated via APIs or exports,1,5,HigherBetter,0.25,Score 5 if APIs available with documentation
+M05,Suitability,Automation feasibility,Task can be broken into rule-based or pattern-based steps,1,5,HigherBetter,0.3,Score 5 if clear if-then logic or templates exist
+M06,Suitability,NLP Pattern clarity,Language patterns are predictable and classifiable,1,5,HigherBetter,0.25,Score 5 if ticket text follows consistent patterns
+M07,Suitability,Exception complexity,Frequency and severity of edge cases requiring human judgment,1,5,HigherWorse,0.2,Score 5 means more than 30% tickets need human judgment
+M08,Suitability,Human-in-loop fit,How well AI can assist vs replace human,1,5,HigherBetter,0.25,Score 5 if clear assist opportunities exist
+M09,Risk,Compliance sensitivity,Regulatory requirements or data sensitivity constraints,1,5,HigherWorse,0.35,Score 5 means PII or financial data involved
+M10,Risk,Customer harm potential,Risk of wrong AI response causing churn or escalation,1,5,HigherWorse,0.35,Score 5 means errors directly impact customer relationship
+M11,Risk,Model error tolerance,How forgiving is the process if AI makes mistakes,1,5,HigherBetter,0.3,Score 5 if errors easily caught and corrected

@@ -1,0 +1,5 @@
+scenario_id,scenario_name,company_id,ticket_volume_monthly,agent_cost_per_hour,sla_response_hours,sla_resolution_hours,value_per_csat_point_monthly,peak_multiplier,implementation_budget,time_horizon_months,discount_rate_annual,overhead_multiplier,automation_adoption_rate,base_implementation_cost,avg_handle_time_minutes
+SCN_BASE,Baseline,COMP_DEMO,8500,28,4,24,15000,1.0,150000,12,0.10,1.15,0.80,25000,15
+SCN_COST,Cost Pressure,COMP_DEMO,8500,35,4,24,10000,1.0,100000,6,0.10,1.20,0.90,20000,15
+SCN_GROWTH,High Growth,COMP_DEMO,15000,28,2,12,20000,1.3,250000,12,0.10,1.15,0.75,30000,12
+SCN_COMPLIANCE,Compliance Heavy,COMP_DEMO,8500,32,4,24,15000,1.0,150000,12,0.10,1.25,0.60,35000,18

@@ -1,0 +1,17 @@
+step_id,step_name,process_area,automation_candidate,volume_share,readiness_score_0_100,suitability_score_0_100,risk_score_0_100,monthly_volume,monthly_manual_cost,monthly_savings_est,annual_savings_est,implementation_cost_est,payback_months,roi_ratio,roi_score_0_100,priority_score_0_100,recommendation,scenario_id,company_id
+S09,Product setup,Technical,Full,0.062,100.0,87.5,0.0,527.0,5270.0,2213.4,26560.8,29260.0,13.22,0.91,72.62,90.42,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S08,Installation support,Technical,Partial,0.063,93.75,82.5,8.75,535.5,7140.0,1713.6,20563.2,24220.0,14.13,0.85,67.92,83.83,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S11,Product recommendation,Sales,Full,0.061,93.75,82.5,8.75,518.5,4148.0,1742.16,20905.92,29260.0,16.8,0.71,57.16,80.07,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S06,Battery life,Technical,Partial,0.064,75.0,75.0,8.75,544.0,6528.0,1566.72,18800.64,24220.0,15.46,0.78,62.1,76.17,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S07,Network problem,Technical,Partial,0.064,68.75,63.75,17.5,544.0,7978.666666666666,1914.88,22978.56,24220.0,12.65,0.95,75.9,76.06,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S16,Display issue,Technical,Partial,0.056,75.0,63.75,25.0,476.0,7933.333333333334,1904.0,22848.0,24220.0,12.72,0.94,75.47,75.16,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S03,Product compatibility,Product,Partial,0.067,75.0,76.25,8.75,569.5,5695.0,1366.8,16401.6,24220.0,17.72,0.68,54.18,73.4,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S13,Peripheral compatibility,Product,Partial,0.059,75.0,76.25,8.75,501.5,5015.0,1203.6,14443.2,24220.0,20.12,0.6,47.71,71.13,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S04,Delivery problem,Logistics,Partial,0.066,75.0,70.0,33.75,561.0,7480.0,1795.2,21542.4,24220.0,13.49,0.89,71.16,70.59,PRIORITY 1 - Strong candidate for full automation,SCN_COMPLIANCE,DEMO_CO
+S02,Software bug,Technical,Assist,0.068,62.5,45.0,33.75,578.0,13486.666666666668,1618.4,19420.8,20860.0,12.89,0.93,74.48,68.01,PRIORITY 2 - Good candidate for AI-assisted workflow,SCN_COMPLIANCE,DEMO_CO
+S12,Account access,Account,Full,0.06,100.0,81.25,42.5,510.0,3400.0,1428.0,17136.0,29260.0,20.49,0.59,46.85,66.52,PRIORITY 2 - Good candidate for AI-assisted workflow,SCN_COMPLIANCE,DEMO_CO
+S01,Refund request,Billing,Assist,0.068,75.0,51.25,67.5,578.0,11560.0,1387.2,16646.4,20860.0,15.04,0.8,63.84,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_COMPLIANCE,DEMO_CO
+S05,Hardware issue,Technical,Assist,0.065,56.25,45.0,50.0,552.5,14733.333333333332,1768.0,21216.0,20860.0,11.8,1.02,80.34,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_COMPLIANCE,DEMO_CO
+S10,Payment issue,Billing,Partial,0.062,75.0,63.75,83.75,527.0,8783.333333333334,2108.0,25296.0,24220.0,11.49,1.04,80.89,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_COMPLIANCE,DEMO_CO
+S14,Data loss,Technical,Assist,0.058,50.0,32.5,91.25,493.0,14790.0,1774.8,21297.6,20860.0,11.75,1.02,80.42,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_COMPLIANCE,DEMO_CO
+S15,Cancellation request,Billing,Assist,0.058,75.0,51.25,58.75,493.0,6573.333333333332,788.8,9465.6,20860.0,26.45,0.45,36.3,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_COMPLIANCE,DEMO_CO

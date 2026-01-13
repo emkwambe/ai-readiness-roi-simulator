@@ -1,0 +1,5 @@
+scenario_id,w_readiness,w_roi,w_risk,min_readiness_gate,max_risk_gate,target_payback_months,target_roi_ratio,roi_preference
+SCN_BASE,0.35,0.45,0.20,50,70,12,2.0,Balanced
+SCN_COST,0.25,0.60,0.15,40,75,6,3.0,Aggressive
+SCN_GROWTH,0.40,0.40,0.20,55,65,18,1.5,Balanced
+SCN_COMPLIANCE,0.30,0.35,0.35,60,55,12,2.0,Conservative

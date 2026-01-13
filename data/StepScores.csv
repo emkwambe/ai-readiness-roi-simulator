@@ -1,0 +1,177 @@
+step_id,metric_id,score,scored_by,scored_date,comment
+S01,M01,4,Analyst,2025-01-12,Refund requests have good data - order history and payment info available
+S01,M02,4,Analyst,2025-01-12,Data quality good but some edge cases with partial refunds
+S01,M03,4,Analyst,2025-01-12,Well-documented refund policy and process
+S01,M04,4,Analyst,2025-01-12,Payment system APIs available
+S01,M05,3,Analyst,2025-01-12,Many refunds need judgment on policy exceptions
+S01,M06,3,Analyst,2025-01-12,Request language varies significantly
+S01,M07,4,Analyst,2025-01-12,High rate of exceptions needing human judgment
+S01,M08,4,Analyst,2025-01-12,Good assist opportunity - AI drafts and human approves
+S01,M09,4,Analyst,2025-01-12,Financial data involved - compliance requirements
+S01,M10,4,Analyst,2025-01-12,Wrong refund decision = customer churn risk
+S01,M11,3,Analyst,2025-01-12,Errors caught but reversal is costly
+S02,M01,4,Analyst,2025-01-12,Bug reports have product/version info
+S02,M02,3,Analyst,2025-01-12,User descriptions vary in quality
+S02,M03,3,Analyst,2025-01-12,Troubleshooting trees exist but complex
+S02,M04,4,Analyst,2025-01-12,Integration with bug tracking possible
+S02,M05,3,Analyst,2025-01-12,Initial triage automatable - resolution less so
+S02,M06,2,Analyst,2025-01-12,Bug descriptions highly variable
+S02,M07,4,Analyst,2025-01-12,Many unique bugs need investigation
+S02,M08,4,Analyst,2025-01-12,Great for AI-assisted diagnosis
+S02,M09,2,Analyst,2025-01-12,Low compliance risk
+S02,M10,3,Analyst,2025-01-12,Wrong diagnosis wastes time but recoverable
+S02,M11,4,Analyst,2025-01-12,Errors easily caught in testing
+S03,M01,4,Analyst,2025-01-12,Product specs and compatibility databases exist
+S03,M02,4,Analyst,2025-01-12,Structured compatibility data
+S03,M03,4,Analyst,2025-01-12,Clear lookup process
+S03,M04,4,Analyst,2025-01-12,Product database APIs available
+S03,M05,5,Analyst,2025-01-12,Pure lookup - highly automatable
+S03,M06,4,Analyst,2025-01-12,Questions follow predictable patterns
+S03,M07,2,Analyst,2025-01-12,Few exceptions - compatibility is binary
+S03,M08,3,Analyst,2025-01-12,Can fully automate most cases
+S03,M09,1,Analyst,2025-01-12,No sensitive data
+S03,M10,2,Analyst,2025-01-12,Wrong answer frustrating but not critical
+S03,M11,5,Analyst,2025-01-12,Customer can verify compatibility themselves
+S04,M01,4,Analyst,2025-01-12,Order tracking data available
+S04,M02,4,Analyst,2025-01-12,Shipping data generally reliable
+S04,M03,4,Analyst,2025-01-12,Standard escalation to logistics
+S04,M04,4,Analyst,2025-01-12,Carrier APIs available
+S04,M05,4,Analyst,2025-01-12,Status lookup highly automatable
+S04,M06,4,Analyst,2025-01-12,Where is my order queries consistent
+S04,M07,3,Analyst,2025-01-12,Lost packages need human intervention
+S04,M08,4,Analyst,2025-01-12,AI handles status and escalates problems
+S04,M09,2,Analyst,2025-01-12,Address data - minor privacy concern
+S04,M10,3,Analyst,2025-01-12,Delivery issues emotional for customers
+S04,M11,4,Analyst,2025-01-12,Status errors easily corrected
+S05,M01,4,Analyst,2025-01-12,Product/warranty data available
+S05,M02,3,Analyst,2025-01-12,Symptom descriptions vary
+S05,M03,3,Analyst,2025-01-12,Diagnostic trees exist but complex
+S05,M04,3,Analyst,2025-01-12,RMA systems sometimes legacy
+S05,M05,3,Analyst,2025-01-12,Initial diagnosis possible - repair decisions harder
+S05,M06,2,Analyst,2025-01-12,Hardware symptoms described inconsistently
+S05,M07,4,Analyst,2025-01-12,Many hardware issues unique
+S05,M08,4,Analyst,2025-01-12,AI-assisted diagnosis valuable
+S05,M09,2,Analyst,2025-01-12,Low compliance risk
+S05,M10,4,Analyst,2025-01-12,Wrong diagnosis = frustrated customer
+S05,M11,3,Analyst,2025-01-12,Misdiagnosis delays resolution
+S06,M01,4,Analyst,2025-01-12,Product specs available
+S06,M02,4,Analyst,2025-01-12,Battery specs well documented
+S06,M03,4,Analyst,2025-01-12,Standard troubleshooting steps
+S06,M04,4,Analyst,2025-01-12,Product database integration ready
+S06,M05,4,Analyst,2025-01-12,Standard diagnostic questions work
+S06,M06,4,Analyst,2025-01-12,Battery issues follow patterns
+S06,M07,2,Analyst,2025-01-12,Most issues follow known patterns
+S06,M08,4,Analyst,2025-01-12,AI can guide diagnostics
+S06,M09,1,Analyst,2025-01-12,No sensitive data
+S06,M10,2,Analyst,2025-01-12,Low harm from wrong guidance
+S06,M11,5,Analyst,2025-01-12,Customer can validate suggestions
+S07,M01,4,Analyst,2025-01-12,Network diagnostic data available
+S07,M02,3,Analyst,2025-01-12,User network descriptions vary
+S07,M03,4,Analyst,2025-01-12,Standard troubleshooting flows
+S07,M04,4,Analyst,2025-01-12,Diagnostic tools available
+S07,M05,4,Analyst,2025-01-12,Network troubleshooting follows patterns
+S07,M06,3,Analyst,2025-01-12,Users describe issues differently
+S07,M07,3,Analyst,2025-01-12,Some ISP/environment issues unique
+S07,M08,4,Analyst,2025-01-12,Guided troubleshooting works well
+S07,M09,2,Analyst,2025-01-12,IP addresses - minor privacy
+S07,M10,2,Analyst,2025-01-12,Wrong steps waste time not trust
+S07,M11,5,Analyst,2025-01-12,Network issues self-evident if fixed
+S08,M01,5,Analyst,2025-01-12,Installation guides exist
+S08,M02,4,Analyst,2025-01-12,Product documentation quality high
+S08,M03,5,Analyst,2025-01-12,Step-by-step guides standard
+S08,M04,5,Analyst,2025-01-12,KB integration straightforward
+S08,M05,5,Analyst,2025-01-12,Perfect for guided walkthroughs
+S08,M06,4,Analyst,2025-01-12,Installation questions predictable
+S08,M07,2,Analyst,2025-01-12,Edge cases rare
+S08,M08,4,Analyst,2025-01-12,AI guidance highly effective
+S08,M09,1,Analyst,2025-01-12,No sensitive data
+S08,M10,2,Analyst,2025-01-12,Wrong steps just retry
+S08,M11,5,Analyst,2025-01-12,Installation success obvious
+S09,M01,5,Analyst,2025-01-12,Setup guides comprehensive
+S09,M02,5,Analyst,2025-01-12,Product setup well documented
+S09,M03,5,Analyst,2025-01-12,Clear setup procedures
+S09,M04,5,Analyst,2025-01-12,KB/video integration ready
+S09,M05,5,Analyst,2025-01-12,Perfect automation candidate
+S09,M06,5,Analyst,2025-01-12,Setup questions highly predictable
+S09,M07,1,Analyst,2025-01-12,Very few exceptions
+S09,M08,3,Analyst,2025-01-12,Can fully automate
+S09,M09,1,Analyst,2025-01-12,No sensitive data
+S09,M10,1,Analyst,2025-01-12,Setup errors easily reversed
+S09,M11,5,Analyst,2025-01-12,Success immediately visible
+S10,M01,4,Analyst,2025-01-12,Payment/billing data available
+S10,M02,4,Analyst,2025-01-12,Transaction data structured
+S10,M03,4,Analyst,2025-01-12,Billing dispute process documented
+S10,M04,4,Analyst,2025-01-12,Payment gateway APIs exist
+S10,M05,4,Analyst,2025-01-12,Common issues automatable
+S10,M06,3,Analyst,2025-01-12,Payment issues described variably
+S10,M07,3,Analyst,2025-01-12,Some disputes need judgment
+S10,M08,4,Analyst,2025-01-12,AI drafts responses well
+S10,M09,5,Analyst,2025-01-12,Financial data - high compliance
+S10,M10,4,Analyst,2025-01-12,Payment errors serious for trust
+S10,M11,2,Analyst,2025-01-12,Payment errors costly to fix
+S11,M01,5,Analyst,2025-01-12,Product catalog complete
+S11,M02,5,Analyst,2025-01-12,Product specs accurate
+S11,M03,4,Analyst,2025-01-12,Recommendation logic exists
+S11,M04,5,Analyst,2025-01-12,Product API integration easy
+S11,M05,5,Analyst,2025-01-12,Rule-based recommendations work
+S11,M06,4,Analyst,2025-01-12,Questions follow patterns
+S11,M07,2,Analyst,2025-01-12,Most requests straightforward
+S11,M08,4,Analyst,2025-01-12,AI excels at recommendations
+S11,M09,1,Analyst,2025-01-12,No sensitive data
+S11,M10,2,Analyst,2025-01-12,Wrong rec = lost sale not trust
+S11,M11,5,Analyst,2025-01-12,Customer evaluates rec themselves
+S12,M01,5,Analyst,2025-01-12,Account system well structured
+S12,M02,5,Analyst,2025-01-12,Account data reliable
+S12,M03,5,Analyst,2025-01-12,Password reset fully documented
+S12,M04,5,Analyst,2025-01-12,Identity verification APIs ready
+S12,M05,5,Analyst,2025-01-12,Fully automatable process
+S12,M06,5,Analyst,2025-01-12,Account issues very predictable
+S12,M07,1,Analyst,2025-01-12,Almost no exceptions
+S12,M08,2,Analyst,2025-01-12,Full automation preferred
+S12,M09,3,Analyst,2025-01-12,PII involved - moderate compliance
+S12,M10,3,Analyst,2025-01-12,Account lockout frustrating
+S12,M11,4,Analyst,2025-01-12,Account issues easily verified
+S13,M01,4,Analyst,2025-01-12,Compatibility databases exist
+S13,M02,4,Analyst,2025-01-12,Peripheral specs documented
+S13,M03,4,Analyst,2025-01-12,Lookup process clear
+S13,M04,4,Analyst,2025-01-12,Product DB APIs available
+S13,M05,5,Analyst,2025-01-12,Lookup highly automatable
+S13,M06,4,Analyst,2025-01-12,Compatibility questions consistent
+S13,M07,2,Analyst,2025-01-12,Few exceptions
+S13,M08,3,Analyst,2025-01-12,Can automate most
+S13,M09,1,Analyst,2025-01-12,No sensitive data
+S13,M10,2,Analyst,2025-01-12,Wrong answer = return not churn
+S13,M11,5,Analyst,2025-01-12,Customer can verify
+S14,M01,3,Analyst,2025-01-12,Some data recovery logs available
+S14,M02,3,Analyst,2025-01-12,Error logs vary in detail
+S14,M03,3,Analyst,2025-01-12,Recovery procedures exist but complex
+S14,M04,3,Analyst,2025-01-12,Backup system integration possible
+S14,M05,2,Analyst,2025-01-12,Data loss scenarios unique
+S14,M06,2,Analyst,2025-01-12,Descriptions highly variable
+S14,M07,5,Analyst,2025-01-12,Almost all need human investigation
+S14,M08,4,Analyst,2025-01-12,AI can assist but not resolve
+S14,M09,4,Analyst,2025-01-12,Personal data involved
+S14,M10,5,Analyst,2025-01-12,Data loss = extreme customer distress
+S14,M11,1,Analyst,2025-01-12,Wrong advice may worsen data loss
+S15,M01,4,Analyst,2025-01-12,Account/subscription data available
+S15,M02,4,Analyst,2025-01-12,Subscription data reliable
+S15,M03,4,Analyst,2025-01-12,Cancellation process documented
+S15,M04,4,Analyst,2025-01-12,Subscription system APIs ready
+S15,M05,3,Analyst,2025-01-12,Retention attempts need judgment
+S15,M06,3,Analyst,2025-01-12,Cancellation reasons vary
+S15,M07,4,Analyst,2025-01-12,Often opportunity for save attempt
+S15,M08,4,Analyst,2025-01-12,AI can process - flag for retention
+S15,M09,3,Analyst,2025-01-12,Contract data - moderate compliance
+S15,M10,4,Analyst,2025-01-12,Bad cancellation experience = negative review
+S15,M11,3,Analyst,2025-01-12,Cancellation errors frustrating
+S16,M01,4,Analyst,2025-01-12,Product specs available
+S16,M02,4,Analyst,2025-01-12,Display specs documented
+S16,M03,4,Analyst,2025-01-12,Troubleshooting guides exist
+S16,M04,4,Analyst,2025-01-12,Product DB integration ready
+S16,M05,4,Analyst,2025-01-12,Standard diagnostics work
+S16,M06,3,Analyst,2025-01-12,Display issues described variably
+S16,M07,3,Analyst,2025-01-12,Some issues need RMA
+S16,M08,4,Analyst,2025-01-12,AI-guided diagnosis effective
+S16,M09,1,Analyst,2025-01-12,No sensitive data
+S16,M10,3,Analyst,2025-01-12,Wrong diagnosis delays resolution
+S16,M11,4,Analyst,2025-01-12,Display issues eventually resolved

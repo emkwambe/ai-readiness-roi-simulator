@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project specific
+*.log
+.ipynb_checkpoints/
+
+# Keep outputs but ignore large source data
+# data/real_tickets_source.csv  # Uncomment if you want to exclude raw data

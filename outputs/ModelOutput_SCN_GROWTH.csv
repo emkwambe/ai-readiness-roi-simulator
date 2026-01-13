@@ -1,0 +1,17 @@
+step_id,step_name,process_area,automation_candidate,volume_share,readiness_score_0_100,suitability_score_0_100,risk_score_0_100,monthly_volume,monthly_manual_cost,monthly_savings_est,annual_savings_est,implementation_cost_est,payback_months,roi_ratio,roi_score_0_100,priority_score_0_100,recommendation,scenario_id,company_id
+S09,Product setup,Technical,Full,0.062,100.0,87.5,0.0,1209.0,9732.449999999999,5109.54,61314.43,27600.0,5.4,2.22,100.0,100.0,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S08,Installation support,Technical,Partial,0.063,93.75,82.5,8.75,1228.5,13185.9,3955.77,47469.24,22200.0,5.61,2.14,100.0,95.75,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S11,Product recommendation,Sales,Full,0.061,93.75,82.5,8.75,1189.5,7660.379999999999,4021.7,48260.39,27600.0,6.86,1.75,100.0,95.75,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S12,Account access,Account,Full,0.06,100.0,81.25,42.5,1170.0,6278.999999999999,3296.47,39557.7,27600.0,8.37,1.43,98.22,90.79,PRIORITY 1 - Implement with human-in-loop safeguards,SCN_GROWTH,DEMO_CO
+S13,Peripheral compatibility,Product,Partial,0.059,75.0,76.25,8.75,1150.5,9261.525,2778.46,33341.49,22200.0,7.99,1.5,100.0,88.25,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S03,Product compatibility,Product,Partial,0.067,75.0,76.25,8.75,1306.5000000000002,10517.325,3155.2,37862.37,22200.0,7.04,1.71,100.0,88.25,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S06,Battery life,Technical,Partial,0.064,75.0,75.0,8.75,1248.0,12055.679999999998,3616.7,43400.45,22200.0,6.14,1.95,100.0,88.25,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S16,Display issue,Technical,Partial,0.056,75.0,63.75,25.0,1092.0,14650.999999999998,4395.3,52743.6,22200.0,5.05,2.38,100.0,85.0,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S07,Network problem,Technical,Partial,0.064,68.75,63.75,17.5,1248.0,14734.719999999998,4420.42,53044.99,22200.0,5.02,2.39,100.0,84.0,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S04,Delivery problem,Logistics,Partial,0.066,75.0,70.0,33.75,1287.0,13813.8,4144.14,49729.68,22200.0,5.36,2.24,100.0,83.25,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S02,Software bug,Technical,Assist,0.068,62.5,45.0,33.75,1326.0000000000002,24906.700000000008,3736.01,44832.06,18600.0,4.98,2.41,100.0,78.25,PRIORITY 1 - Strong candidate for full automation,SCN_GROWTH,DEMO_CO
+S15,Cancellation request,Billing,Assist,0.058,75.0,51.25,58.75,1131.0,12139.4,1820.91,21850.92,18600.0,10.21,1.17,91.33,74.78,PRIORITY 1 - Implement with human-in-loop safeguards,SCN_GROWTH,DEMO_CO
+S05,Hardware issue,Technical,Assist,0.065,56.25,45.0,50.0,1267.5,27208.999999999996,4081.35,48976.2,18600.0,4.56,2.63,100.0,72.5,PRIORITY 1 - Implement with human-in-loop safeguards,SCN_GROWTH,DEMO_CO
+S01,Refund request,Billing,Assist,0.068,75.0,51.25,67.5,1326.0000000000002,21348.600000000002,3202.29,38427.48,18600.0,5.81,2.07,100.0,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_GROWTH,DEMO_CO
+S10,Payment issue,Billing,Partial,0.062,75.0,63.75,83.75,1209.0,16220.749999999998,4866.23,58394.7,22200.0,4.56,2.63,100.0,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_GROWTH,DEMO_CO
+S14,Data loss,Technical,Assist,0.058,50.0,32.5,91.25,1131.0,27313.649999999998,4097.05,49164.57,18600.0,4.54,2.64,100.0,0.0,"HIGH RISK - Keep human-operated, monitor for changes",SCN_GROWTH,DEMO_CO
