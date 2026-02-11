@@ -1,198 +1,167 @@
 # AI Readiness & ROI Simulator
 
-![AI Readiness & ROI Simulator](assets/banner.svg)
+![Banner](assets/banner.svg)
 
-**A parameterized decision model for strategic AI investment prioritization**
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2020a+-orange.svg)](https://www.mathworks.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> *This is a Multi-Criteria Decision Analysis (MCDA) implementation using weighted scoring—the same mathematical structure used in operations research, epidemiological compartmental models (SIR/SEIR), and credit risk scoring. Parameters are justified by industry research and validated through sensitivity analysis.*
-
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Model](https://img.shields.io/badge/Model-MCDA%20%2F%20WSM-purple)
-![Status](https://img.shields.io/badge/Status-Portfolio%20Ready-brightgreen)
+> **A parameterized Multi-Criteria Decision Analysis (MCDA) model for strategic AI investment prioritization**
 
 ---
 
-## 🎯 Problem Statement
+## 🎯 The Problem
 
-Organizations waste millions on AI initiatives that fail—not because the technology doesn't work, but because they automate the wrong processes. This tool provides a **data-driven, mathematically rigorous framework** to answer:
+**85% of AI projects fail to deliver expected value.** Yet organizations continue to select automation candidates through intuition, vendor hype, or executive mandate rather than systematic analysis.
 
-- Which processes are *ready* for AI automation?
-- Which will deliver the highest *ROI*?
-- Which carry unacceptable *risk*?
+### The Real Questions Nobody Asks:
+- **Readiness**: Is this process actually mature enough for AI?
+- **Return**: What's the realistic financial payback—not the vendor's projection?
+- **Risk**: What happens when the AI gets it wrong? Compliance fines? Customer churn?
 
-## 🧮 Mathematical Foundation
+### Why Existing Approaches Fail:
+| Approach | Problem |
+|----------|---------|
+| Vendor assessments | Biased toward selling their solution |
+| IT-led selection | Ignores business readiness and change management |
+| Executive intuition | No systematic comparison across options |
+| ROI-only analysis | Ignores risk and readiness constraints |
 
-This project implements a **parameterized decision model**—the same class of models used in:
+### This Model's Solution:
+A **parameterized scoring framework** that evaluates every automation candidate against **11 research-backed metrics** across three dimensions, with **non-compensatory gates** that filter out high-risk or low-readiness processes—regardless of their ROI potential.
 
-| Domain | Model Type | Our Implementation |
-|--------|------------|-------------------|
-| Epidemiology | SIR/SEIR compartmental models | Parameter-driven state transitions |
-| Finance | Credit scoring (FICO) | Weighted multi-factor scoring |
-| Operations Research | Analytic Hierarchy Process (AHP) | Hierarchical criteria with weights |
-| Decision Science | Multi-Criteria Decision Analysis | Compensatory weighted sum with gates |
+---
 
-### Core Model
+## 📊 Visualizations
+
+### Priority Matrix
+*Which processes should you automate first?*
+
+![Priority Matrix](outputs/figures/fig1_priority_matrix.png)
+
+**Insight**: Product Setup and Installation Support rank highest due to strong readiness scores and favorable ROI. Payment Issue and Data Loss are gated out despite decent ROI—the risk is simply too high.
+
+---
+
+### Risk-Readiness Quadrant
+*Strategic positioning of all 16 process steps*
+
+![Risk-Readiness Quadrant](outputs/figures/fig3_risk_readiness_quadrant.png)
+
+**Insight**: The ideal quadrant (High Ready / Low Risk) contains your priority targets. Red-shaded regions indicate processes that fail gate thresholds and are excluded from prioritization.
+
+---
+
+### Monte Carlo Simulation (n=500)
+*How stable are these recommendations under parameter uncertainty?*
+
+![Monte Carlo](outputs/figures/fig4_monte_carlo.png)
+
+**Key Finding**: "Product Setup" ranked #1 in **100% of 500 simulations** across varying weight combinations. The 90% confidence interval for annual savings is **$222K - $354K**.
+
+---
+
+### Scenario Comparison
+*How do recommendations change under different strategic contexts?*
+
+![Scenario Comparison](outputs/figures/fig5_scenario_comparison.png)
+
+**Insight**: The Compliance-Heavy scenario gates out 5 processes (vs. 2 in Baseline), reducing potential savings by $67K but significantly lowering risk exposure.
+
+---
+
+### Weight Sensitivity Analysis
+*Are rankings stable or fragile?*
+
+![Weight Sensitivity](outputs/figures/fig6_weight_sensitivity.png)
+
+**Validation**: Top 2 priorities remain stable across all 5 weight schemes tested, demonstrating robust recommendations that don't depend on precise parameter calibration.
+
+---
+
+## 🔬 Model Architecture
+
+### Three-Dimensional Scoring
 
 ```
-Priority = GateFactor × (w_r × Readiness + w_roi × ROI + w_risk × Safety)
-
-Where:
-  GateFactor ∈ {0, 1}  — Non-compensatory threshold filter
-  w_r, w_roi, w_risk   — Strategy weights (Σ = 1.0)
-  Readiness, ROI       — Dimension scores [0, 100]
-  Safety = 100 - Risk  — Inverted risk score
+Priority = Gate × (w_readiness × R + w_roi × ROI + w_risk × Safety)
 ```
+
+| Dimension | Weight | What It Measures |
+|-----------|--------|------------------|
+| **Readiness** | 35% | Data availability, quality, process standardization, tooling |
+| **ROI** | 45% | Payback period, annual savings ratio |
+| **Risk** | 20% | Compliance exposure, customer harm potential, error tolerance |
+
+### Non-Compensatory Gates
+
+Unlike pure weighted-sum models, this framework includes **hard gates**:
+
+- **Min Readiness Gate (50)**: Processes below this threshold are excluded—no amount of ROI can compensate for insufficient readiness
+- **Max Risk Gate (70)**: High-risk processes are excluded regardless of other scores
 
 ### Parameter Justification
 
-All parameters are derived from **industry research and empirical benchmarks**—not arbitrary choices. See [`docs/PARAMETER_JUSTIFICATION.md`](docs/PARAMETER_JUSTIFICATION.md) for complete citations including:
+Every parameter is backed by industry research:
 
-- McKinsey Global AI Survey (ROI primacy in 67% of decisions)
-- Gartner research (85% AI failures trace to readiness issues)
-- Forrester Automation Success Index (readiness-success correlation)
-- ISO 31000 / NIST AI RMF (risk management frameworks)
+| Parameter | Value | Source |
+|-----------|-------|--------|
+| w_readiness = 0.35 | Gartner (2022): 85% of AI failures trace to readiness |
+| w_roi = 0.45 | McKinsey (2023): ROI is primary criterion for 67% of decisions |
+| min_readiness = 50 | Forrester (2022): <50 correlates with <50% success rate |
+| shift_full = 0.70 | IBM Watson studies: 65-80% containment typical |
 
----
-
-## 📊 What This Project Demonstrates
-
-| Skill | Evidence |
-|-------|----------|
-| **Mathematical Modeling** | Parameterized decision model with documented assumptions |
-| **Quantitative Analysis** | Weighted scoring, ROI calculations, sensitivity analysis |
-| **Business Analysis** | Process mapping, stakeholder requirements, scenario planning |
-| **Research Rigor** | Parameter justification with academic/industry citations |
-| **Technical Implementation** | Python engine, modular architecture, comprehensive testing |
+📄 **[Full Parameter Justification →](docs/PARAMETER_JUSTIFICATION.md)**
 
 ---
 
-## 🏗️ Architecture
+## 📈 Results Summary
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      INPUT LAYER                            │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐  │
-│  │ProcessSteps │  │StepScores   │  │BusinessParams       │  │
-│  │(workflow)   │  │(assessments)│  │(scenario economics) │  │
-│  └─────────────┘  └─────────────┘  └─────────────────────┘  │
-└────────────────────────────┬────────────────────────────────┘
-                             │
-┌────────────────────────────▼────────────────────────────────┐
-│                     SCORING ENGINE                          │
-│  ┌───────────────────────────────────────────────────────┐  │
-│  │ Dimension_Score = 100 × Σ(norm_score × weight) / Σw   │  │
-│  │ ROI_Score = 0.6 × PaybackScore + 0.4 × RatioScore     │  │
-│  │ Priority = Gate × (w_r·R + w_roi·ROI + w_risk·Safety) │  │
-│  └───────────────────────────────────────────────────────┘  │
-└────────────────────────────┬────────────────────────────────┘
-                             │
-┌────────────────────────────▼────────────────────────────────┐
-│                     VALIDATION LAYER                        │
-│  ┌─────────────────┐  ┌────────────────┐  ┌──────────────┐  │
-│  │Weight Sensitivity│  │Gate Sensitivity│  │Monte Carlo   │  │
-│  │Analysis          │  │Analysis        │  │Simulation    │  │
-│  └─────────────────┘  └────────────────┘  └──────────────┘  │
-└─────────────────────────────────────────────────────────────┘
-```
+### Baseline Scenario (SCN_BASE)
+
+| Rank | Process | Priority | Readiness | Risk | Annual Savings |
+|------|---------|----------|-----------|------|----------------|
+| 1 | Product setup | 93 | 100 | 0 | $28,509 |
+| 2 | Installation support | 89 | 94 | 9 | $22,071 |
+| 3 | Product recommendation | 85 | 94 | 9 | $22,439 |
+| 4 | Battery life | 81 | 75 | 9 | $20,179 |
+| 5 | Display issue | 80 | 75 | 25 | $24,524 |
+| ⛔ | Payment issue | GATED | 75 | **75** | — |
+| ⛔ | Data loss | GATED | 38 | **92** | — |
+
+### Financial Summary
+
+| Metric | Value |
+|--------|-------|
+| Total Annual Savings | **$288,651** |
+| Items Prioritized | 14 of 16 |
+| Items Gated (Risk) | 2 |
+| Portfolio Payback | 11.1 months |
 
 ---
 
 ## 🚀 Quick Start
 
+### Python
 ```bash
-# Clone the repository
-git clone https://github.com/yourusername/ai-readiness-roi-simulator.git
+# Clone the repo
+git clone https://github.com/YOUR_USERNAME/ai-readiness-roi-simulator.git
 cd ai-readiness-roi-simulator
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Run baseline scenario
-python run_model.py --scenario SCN_BASE
+# Run the model
+python run_model.py
 
-# Run sensitivity analysis
-python src/sensitivity_analysis.py
-
-# List all scenarios
-python run_model.py --list-scenarios
+# Generate visualizations
+python src/visualize_model.py
 ```
 
----
-
-## 📈 Model Validation: Sensitivity Analysis
-
-A mathematical model is only as good as its robustness to parameter uncertainty. We validate through:
-
-### 1. Weight Sensitivity
-
-**Question:** Do top priorities change with different weight schemes?
-
-| Weight Scheme | #1 Priority | #2 Priority | Stability |
-|---------------|-------------|-------------|-----------|
-| Baseline (35/45/20) | Product setup | Installation support | ✅ |
-| ROI Heavy (20/60/20) | Product setup | Installation support | ✅ |
-| Risk Averse (30/30/40) | Product setup | Installation support | ✅ |
-| Equal Weights (33/34/33) | Product setup | Installation support | ✅ |
-
-**Finding:** Top 2 priorities are **100% stable** across all reasonable weight combinations.
-
-### 2. Monte Carlo Simulation (n=500)
-
-```
-📊 SAVINGS DISTRIBUTION:
-   Mean:    $286K
-   Median:  $283K
-   Std Dev: $40K
-   90% CI:  [$222K, $354K]
-
-📊 TOP PRIORITY STABILITY:
-   "Product Setup" ranked #1 in 500/500 simulations (100%)
-```
-
-**Finding:** Recommendations are robust to parameter uncertainty within ±20%.
-
-### 3. Gate Sensitivity
-
-| Gates (Readiness/Risk) | Items Prioritized | Potential Savings |
-|------------------------|-------------------|-------------------|
-| Loose (40/80) | 14 | $289K |
-| **Baseline (50/70)** | **14** | **$289K** |
-| Strict (70/55) | 9 | $192K |
-
-**Finding:** Baseline gates are optimal; tightening reduces opportunity by $96K.
-
----
-
-## 🎛️ Scenario Configuration
-
-The system is **fully parameterized**—change business context without code changes:
-
-### Available Scenarios
-
-| Scenario | Focus | Annual Savings | ROI | Payback |
-|----------|-------|----------------|-----|---------|
-| **Baseline** | Balanced | $289K | 1.08x | 11.1 mo |
-| **Cost Pressure** | Aggressive ROI | $424K | 1.91x | 6.3 mo |
-| **High Growth** | Scale ops | $582K | 1.98x | 6.1 mo |
-| **Compliance** | Risk-averse | $222K | 0.80x | 15.1 mo |
-
-### Parameter Categories
-
-```yaml
-# Business Economics (change by company)
-ticket_volume_monthly: 8500
-agent_cost_per_hour: 28
-implementation_budget: 150000
-
-# Strategy Weights (change by leadership)
-w_readiness: 0.35  # Justified: industry research
-w_roi: 0.45        # Justified: CFO decision patterns
-w_risk: 0.20       # Justified: risk management frameworks
-
-# Gates (non-compensatory thresholds)
-min_readiness_gate: 50  # Justified: Forrester success data
-max_risk_gate: 70       # Justified: ISO 31000 principles
+### MATLAB
+```matlab
+% Open and run
+run('matlab/AI_Readiness_Model.m')
 ```
 
 ---
@@ -200,126 +169,65 @@ max_risk_gate: 70       # Justified: ISO 31000 principles
 ## 📁 Project Structure
 
 ```
-ai-readiness-roi/
-├── assets/
-│   └── banner.svg            # Project banner
-├── data/
-│   ├── ProcessSteps.csv      # 16 workflow steps (from real data)
-│   ├── ScoringMetrics.csv    # 11 metrics, 3 dimensions
-│   ├── StepScores.csv        # 176 manual assessments
-│   ├── BusinessParams.csv    # 4 scenario economics
-│   ├── StrategyParams.csv    # 4 strategy configurations
-│   └── real_tickets_source.csv  # Source: Kaggle (8,469 tickets)
-├── docs/
-│   └── PARAMETER_JUSTIFICATION.md  # Research citations
-├── outputs/
-│   ├── ModelOutput_*.csv     # Results per scenario
-│   └── AIReadinessDashboard.jsx  # Interactive visualization
+ai-readiness-roi-simulator/
+├── data/                    # Input CSV files
+│   ├── ProcessSteps.csv     # 16 automation candidates
+│   ├── ScoringMetrics.csv   # 11 evaluation metrics
+│   ├── StepScores.csv       # 176 scores (16 × 11)
+│   ├── BusinessParams.csv   # 4 scenario configurations
+│   └── StrategyParams.csv   # Dimension weights & gates
 ├── src/
-│   ├── io.py                 # Data loading utilities
-│   ├── model.py              # Core scoring engine
-│   └── sensitivity_analysis.py  # Model validation
-├── run_model.py              # CLI entry point
-├── requirements.txt
-└── README.md
+│   ├── model.py             # Core MCDA engine
+│   ├── io.py                # Data utilities
+│   ├── sensitivity_analysis.py
+│   └── visualize_model.py   # Matplotlib + Plotly
+├── matlab/
+│   └── AI_Readiness_Model.m # Complete MATLAB implementation
+├── outputs/
+│   ├── figures/             # PNG + interactive HTML
+│   └── ModelOutput_*.csv    # Scenario results
+├── docs/
+│   ├── PROJECT_PAPER.md     # Academic writeup
+│   ├── PARAMETER_JUSTIFICATION.md
+│   └── MODEL_ADAPTATION_GUIDE.md
+└── run_model.py             # Entry point
 ```
 
 ---
 
-## 📐 Scoring Framework
+## 🔄 Adapt for Your Domain
 
-### Dimension Structure
+This framework works for **any multi-criteria prioritization problem**:
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    PRIORITY SCORE                        │
-│                         │                                │
-│     ┌───────────────────┼───────────────────┐            │
-│     │                   │                   │            │
-│     ▼                   ▼                   ▼            │
-│ ┌───────────┐     ┌───────────┐     ┌───────────┐       │
-│ │ READINESS │     │    ROI    │     │   RISK    │       │
-│ │   (35%)   │     │   (45%)   │     │   (20%)   │       │
-│ └─────┬─────┘     └─────┬─────┘     └─────┬─────┘       │
-│       │                 │                 │              │
-│   ┌───┴───┐         ┌───┴───┐         ┌───┴───┐         │
-│   │4 items│         │Payback│         │3 items│         │
-│   │equally│         │ + ROI │         │weighted│         │
-│   │weighted│        │ ratio │         │       │         │
-│   └───────┘         └───────┘         └───────┘         │
-└─────────────────────────────────────────────────────────┘
-```
+| Domain | Use Case |
+|--------|----------|
+| **Product** | Feature backlog prioritization |
+| **Finance** | Investment portfolio selection |
+| **Marketing** | Channel/campaign prioritization |
+| **IT** | Technical debt ranking |
+| **Procurement** | Vendor selection |
+| **Healthcare** | Treatment protocol evaluation |
 
-### Metric Details
-
-| Dimension | Metric | Weight | Direction | Source |
-|-----------|--------|--------|-----------|--------|
-| Readiness | Data availability | 0.25 | ↑ Better | Davenport 2018 |
-| Readiness | Data quality | 0.25 | ↑ Better | Gartner 2022 |
-| Readiness | Process standardization | 0.25 | ↑ Better | IEEE SE |
-| Readiness | Tool integration | 0.25 | ↑ Better | VentureBeat |
-| Suitability | Automation feasibility | 0.30 | ↑ Better | McKinsey |
-| Suitability | NLP pattern clarity | 0.25 | ↑ Better | Domain |
-| Suitability | Exception complexity | 0.20 | ↑ Worse | Forrester |
-| Suitability | Human-in-loop fit | 0.25 | ↑ Better | HBR |
-| Risk | Compliance sensitivity | 0.35 | ↑ Worse | ISO 31000 |
-| Risk | Customer harm potential | 0.35 | ↑ Worse | Qualtrics |
-| Risk | Error tolerance | 0.30 | ↑ Better | NIST |
-
----
-
-## 🔬 Comparison to Other Parameterized Models
-
-| Model | Domain | Parameters | Our Analog |
-|-------|--------|------------|------------|
-| **SIR/SEIR** | Epidemiology | β (transmission), γ (recovery) | w_roi, w_readiness |
-| **FICO Score** | Credit Risk | Payment history, utilization weights | Dimension weights |
-| **Black-Scholes** | Options Pricing | σ (volatility), r (risk-free rate) | Risk gates, adoption rate |
-| **Cobb-Douglas** | Economics | α, β (factor elasticities) | w_r, w_roi, w_risk |
-
-The epistemology is identical:
-1. **Structure relationships** between factors
-2. **Parameterize** with domain knowledge or calibration
-3. **Simulate scenarios** to inform decisions
-4. **Validate** against outcomes and adjust
+📄 **[Full Adaptation Guide →](docs/MODEL_ADAPTATION_GUIDE.md)**
 
 ---
 
 ## 📚 Documentation
 
-- **[Parameter Justification](docs/PARAMETER_JUSTIFICATION.md)** — Complete research citations for all parameters
-- **[Sensitivity Analysis](src/sensitivity_analysis.py)** — Model validation code
-- **[Interactive Dashboard](outputs/AIReadinessDashboard.jsx)** — React visualization
+| Document | Description |
+|----------|-------------|
+| [PROJECT_PAPER.md](docs/PROJECT_PAPER.md) | Academic paper-style writeup |
+| [PARAMETER_JUSTIFICATION.md](docs/PARAMETER_JUSTIFICATION.md) | Research citations for all parameters |
+| [MODEL_ADAPTATION_GUIDE.md](docs/MODEL_ADAPTATION_GUIDE.md) | How to apply to other domains |
 
 ---
 
-## 🎯 Use Cases
+## 🛠️ Built With
 
-1. **Pre-Investment Due Diligence** — Score processes before AI spending
-2. **Vendor Evaluation** — Compare AI solutions against requirements
-3. **Portfolio Prioritization** — Rank multiple AI initiatives
-4. **Executive Communication** — Justify decisions with data
-5. **Continuous Calibration** — Update parameters with outcomes
-
----
-
-## 🔮 Future Enhancements
-
-- [ ] Bayesian parameter updating from outcomes
-- [ ] Process dependency modeling (network effects)
-- [ ] Uncertainty quantification (confidence intervals)
-- [ ] Web interface for non-technical users
-- [ ] Integration with project management tools
-
----
-
-## 👤 About
-
-**AI Business Analyst Portfolio Project**
-
-This project demonstrates the ability to build mathematically rigorous decision support tools that translate business problems into quantitative frameworks with defensible parameters.
-
-> "I built a parameterized decision model using multi-criteria weighted scoring—the same mathematical structure used in epidemiological models and credit risk scoring. All parameters are justified by industry research, and the model is validated through sensitivity analysis showing 100% ranking stability for top priorities."
+- **Python** (pandas, numpy, matplotlib, plotly)
+- **MATLAB** (Statistics and Machine Learning Toolbox)
+- **React** (Dashboard component)
+- **Real Data**: Kaggle Customer Support Dataset (8,469 tickets)
 
 ---
 
@@ -329,8 +237,8 @@ MIT License - See [LICENSE](LICENSE) for details.
 
 ---
 
-## 🙏 Acknowledgments
+## 🤝 Connect
 
-- **Data Source:** [Kaggle Customer Support Ticket Dataset](https://www.kaggle.com/datasets/suraj520/customer-support-ticket-dataset)
-- **Methodology:** Multi-Criteria Decision Analysis (MCDA), Weighted Sum Model (WSM)
-- **Research:** McKinsey, Gartner, Forrester, ISO, NIST (see Parameter Justification doc)
+Built by **[Your Name]** | [LinkedIn](https://linkedin.com/in/yourprofile) | [Portfolio](https://yourportfolio.com)
+
+*Questions or consulting inquiries? Open an issue or reach out directly.*
