@@ -216,7 +216,7 @@ This framework works for **any multi-criteria prioritization problem**:
 
 | Document | Description |
 |----------|-------------|
-| [PROJECT_PAPER.md](docs/PROJECT_PAPER.md) | Academic paper-style writeup |
+| [PROJECT_PAPER.md](docs/PROJECT_PAPER.md) | Academic writeup |
 | [PARAMETER_JUSTIFICATION.md](docs/PARAMETER_JUSTIFICATION.md) | Research citations for all parameters |
 | [MODEL_ADAPTATION_GUIDE.md](docs/MODEL_ADAPTATION_GUIDE.md) | How to apply to other domains |
 
