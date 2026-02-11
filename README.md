@@ -10,7 +10,7 @@
 
 ---
 
-## 🎯 The Problem
+##  The Problem
 
 **85% of AI projects fail to deliver expected value.** Yet organizations continue to select automation candidates through intuition, vendor hype, or executive mandate rather than systematic analysis.
 
@@ -32,7 +32,7 @@ A **parameterized scoring framework** that evaluates every automation candidate 
 
 ---
 
-## 📊 Visualizations
+##  Visualizations
 
 ### Priority Matrix
 *Which processes should you automate first?*
@@ -79,7 +79,7 @@ A **parameterized scoring framework** that evaluates every automation candidate 
 
 ---
 
-## 🔬 Model Architecture
+##  Model Architecture
 
 ### Three-Dimensional Scoring
 
@@ -111,11 +111,11 @@ Every parameter is backed by industry research:
 | min_readiness = 50 | Forrester (2022): <50 correlates with <50% success rate |
 | shift_full = 0.70 | IBM Watson studies: 65-80% containment typical |
 
-📄 **[Full Parameter Justification →](docs/PARAMETER_JUSTIFICATION.md)**
+ **[Full Parameter Justification →](docs/PARAMETER_JUSTIFICATION.md)**
 
 ---
 
-## 📈 Results Summary
+##  Results Summary
 
 ### Baseline Scenario (SCN_BASE)
 
@@ -140,7 +140,7 @@ Every parameter is backed by industry research:
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Python
 ```bash
@@ -166,7 +166,7 @@ run('matlab/AI_Readiness_Model.m')
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ai-readiness-roi-simulator/
@@ -195,7 +195,7 @@ ai-readiness-roi-simulator/
 
 ---
 
-## 🔄 Adapt for Your Domain
+##  Adapt for Your Domain
 
 This framework works for **any multi-criteria prioritization problem**:
 
@@ -208,11 +208,11 @@ This framework works for **any multi-criteria prioritization problem**:
 | **Procurement** | Vendor selection |
 | **Healthcare** | Treatment protocol evaluation |
 
-📄 **[Full Adaptation Guide →](docs/MODEL_ADAPTATION_GUIDE.md)**
+ **[Full Adaptation Guide →](docs/MODEL_ADAPTATION_GUIDE.md)**
 
 ---
 
-## 📚 Documentation
+##  Documentation
 
 | Document | Description |
 |----------|-------------|
@@ -222,7 +222,7 @@ This framework works for **any multi-criteria prioritization problem**:
 
 ---
 
-## 🛠️ Built With
+##  Built With
 
 - **Python** (pandas, numpy, matplotlib, plotly)
 - **MATLAB** (Statistics and Machine Learning Toolbox)
@@ -231,14 +231,14 @@ This framework works for **any multi-criteria prioritization problem**:
 
 ---
 
-## 📄 License
+##  License
 
-MIT License - See [LICENSE](LICENSE) for details.
+MIT License - See LICENSE for details.
 
 ---
 
-## 🤝 Connect
+##  Connect
 
-Built by **[Your Name]** | [LinkedIn](https://linkedin.com/in/yourprofile) | [Portfolio](https://yourportfolio.com)
+Built by **Eddy Mkwambe** | https://www.linkedin.com/in/eddymkwambe/ | [Portfolio](https://yourportfolio.com)
 
 *Questions or consulting inquiries? Open an issue or reach out directly.*
